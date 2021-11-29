@@ -3,10 +3,17 @@ import psutil
 import os
 
 class ProcessManager:
+    '''
+    This class is designed to manage all process, which will be used to start and kill
+    green-cat, and take dump files
+    '''
     def __init__(self):
-        self.procDict = self.pidDictBuilder()
+        self.procDict = self.__pidDictBuilder__()
 
-    def pidDictBuilder(self):
+    def __pidDictBuilder__(self):
+        '''
+        This is used to build the process dict of {'name' : pid}
+        '''
         procDict = {}
         pids = psutil.pids()
         for pid in pids:
@@ -19,10 +26,16 @@ class ProcessManager:
         return procDict
 
     def showAllProcInfo(self):
+        '''
+        Show all process info: name and pid
+        '''
         for i in self.procDict.items():
             print('PID: ',i[1],', PROCESS NAME:', i[0])
 
     def processKiller(self, name):
+        '''
+        Search and kill the process of givin name
+        '''
         flag = False
         for i in self.procDict.items():
             process_name = i[0]
@@ -38,6 +51,10 @@ class ProcessManager:
             print('Process Not Found:', name)
 
 class GDBManager:
+    '''
+    This class is designed to control the GDB, which will be used to insert breaker,
+    remove breaker
+    '''
     def __init__(self):
         pass
 
