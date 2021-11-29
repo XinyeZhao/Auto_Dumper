@@ -29,17 +29,15 @@ class ProcessManager:
         '''
         Show all process info: name and pid
         '''
-        for i in self.procDict.items():
-            print('PID: ',i[1],', PROCESS NAME:', i[0])
+        for process_name, pid in self.procDict.items():
+            print('PID: ',pid,', PROCESS NAME: ', process_name)
 
     def processKiller(self, name):
         '''
         Search and kill the process of givin name
         '''
         flag = False
-        for i in self.procDict.items():
-            process_name = i[0]
-            pid = i[1]
+        for process_name, pid in self.procDict.items():
             if name == process_name:
                 flag = True
                 p = psutil.Process(pid)
