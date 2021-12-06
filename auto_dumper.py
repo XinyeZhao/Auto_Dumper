@@ -1,6 +1,3 @@
-import pygdbmi
-import psutil
-import os
 import ProcessManager
 import GDBManager
 

@@ -1,3 +1,6 @@
+import psutil
+import os
+
 class ProcessManager:
     '''
     This class is designed to manage all processes, which will be used to start and kill

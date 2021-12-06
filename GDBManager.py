@@ -1,3 +1,5 @@
+import pygdbmi
+
 class GDBManager:
     '''
     This class is designed to control GDB, which will be used to insert and/or remove breakpoint,
