@@ -47,7 +47,7 @@ def main():
     # remove breakpoint
     print("Removing break point...")
     output = gdb_manager.exec(f'del 1')
-    print(f"Response for adding breakpoint at {addr}:")
+    print(f"Response for removing breakpoint at {addr}:")
     print(output)
 
     # wait for user to take memory dump
