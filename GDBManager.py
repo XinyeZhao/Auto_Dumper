@@ -16,6 +16,9 @@ class GDBManager:
     def exec(self, command):
         output = self.__controller.write(command)
         return output
+    
+    def get_response(self):
+        return self.__controller.get_gdb_response()
 
     def exit(self):
         if self.__isActive:
