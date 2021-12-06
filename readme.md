@@ -6,24 +6,21 @@
 
 + class ProcessManager:
   - Manage process, search process PID and kill process
+  - Currently unused
 + class GDBManager:
   - Manage GDB, to insert and remove breakpoints
-  - Unfinished...
 
 ## 2. Using Auto_Dumper
 
-### 1. For Windows:
+### Dependencies:
+It is confirmed that Auto_Dumper works on Windows with [msys2](https://www.msys2.org/). Of course, You also need to install `gdb` on msys2 by `pacman -S gdb`.
 
-In main function, showAllProcInfo method will list all current process with PID
+You also need to install the following python package(s) in your msys2 environment:
+`pip install pygdbmi`
 
-```
-process_manager.showAllProcInfo()
-```
+### Usage:
+`python auto_dumper.py [breakpoint instruction address] [malware exe name]`
 
-For killing a process, simply using 
+When you see the message: `Waiting for you to take a memory dump...`, you can take a memory dump of the running malware process via various means, e.g. task manager.
 
-```
-process_manager.processKiller('the process name')### 3. For Linux:
-```
-
-### 2. For Linux:
+After you have taken the memory dump, enter any input, and Auto_Dumper will kill the subordinate malware process, exit gdb, and terminate itself.
