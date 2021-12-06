@@ -36,7 +36,7 @@ def main():
     # run
     print(f"Starting {path}...")
     output = gdb_manager.exec("run")
-    printf(f"Response for running {path}:")
+    print(f"Response for running {path}:")
     print(output)
 
     # remove breakpoint
