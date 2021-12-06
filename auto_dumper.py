@@ -6,7 +6,7 @@ def prompt():
     print("Usage: python auto_dumper.py [breakpoint address in hex] [path to malware executable]")
 
 def write_dump(proc_name):
-    subproc = subprocess.Popen([f'./procdump/procdump.exe -ma -w {proc_name} {proc_name}.dmp'])
+    subproc = subprocess.Popen([f'./procdump/procdump.exe', '-ma', '-w', '{proc_name}', '{proc_name}.dmp'])
     return subproc.wait()
 
 def main():
