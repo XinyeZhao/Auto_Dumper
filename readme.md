@@ -18,6 +18,8 @@ It is confirmed that Auto_Dumper works on Windows with [msys2](https://www.msys2
 You also need to install the following python package(s) in your msys2 environment:
 `pip install pygdbmi`
 
+This script relies on [procdump](https://docs.microsoft.com/en-us/sysinternals/downloads/procdump) to take memory dump of running processes. You can find the executables in the `./procdump` folder. You can also download yourself if you wish. Please make sure the `write_dump()` function is invoking the version of procdump that matches your operating system.
+
 ### Usage:
 `python auto_dumper.py [breakpoint instruction address] [malware exe name]`
 
