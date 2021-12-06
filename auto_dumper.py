@@ -1,8 +1,13 @@
 from GDBManager import GDBManager
 import sys
+import subprocess
 
 def prompt():
     print("Usage: python auto_dumper.py [breakpoint address in hex] [path to malware executable]")
+
+def write_dump(proc_name):
+    subproc = subprocess.Popen([f'./procdump/procdump.exe -ma -w {proc_name} {proc_name}.dmp'])
+    return subproc.wait()
 
 def main():
     if(len(sys.argv) != 3):
@@ -47,9 +52,9 @@ def main():
 
     # wait for user to take memory dump
     print("\n")
-    print("Waiting for you to take a memory dump...")
-    print("Enter anything to continue after you are done")
-    tmp = input()
+    print(f"Writing memory dump for {path}...")
+    exit_code = write_dump(path)
+    print(f"Finished writing memory dump. Exited with code: {exit_code}")
 
     gdb_manager.exit()
 
