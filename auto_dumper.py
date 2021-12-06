@@ -39,17 +39,17 @@ def main():
     printf(f"Response for running {path}:")
     print(output)
 
-    # wait for user to take memory dump
-    print("\n")
-    print("Waiting for you to take a memory dump...")
-    print("Enter anything to continue after you are done")
-    tmp = input()
-
     # remove breakpoint
     print("Removing break point...")
     output = gdb_manager.exec(f'del 1')
     print(f"Response for adding breakpoint at {addr}:")
     print(output)
+
+    # wait for user to take memory dump
+    print("\n")
+    print("Waiting for you to take a memory dump...")
+    print("Enter anything to continue after you are done")
+    tmp = input()
 
     gdb_manager.exit()
 
