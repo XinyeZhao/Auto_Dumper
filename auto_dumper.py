@@ -29,7 +29,7 @@ def main():
 
     # add breakpoint
     print("Adding break point...")
-    output = gdb_manager.exec(f'break {addr}')
+    output = gdb_manager.exec(f'break *{addr}')
     print(f"Response for adding breakpoint at {addr}:")
     print(output)
 
