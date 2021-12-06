@@ -4,7 +4,7 @@ import os
 
 class ProcessManager:
     '''
-    This class is designed to manage all process, which will be used to start and kill
+    This class is designed to manage all processes, which will be used to start and kill
     green-cat, and take dump files
     '''
     def __init__(self):
@@ -30,11 +30,11 @@ class ProcessManager:
         Show all process info: name and pid
         '''
         for process_name, pid in self.procDict.items():
-            print('PID: ',pid,', PROCESS NAME: ', process_name)
+            print(f'PID: {pid}, PROCESS NAME: {process_name}')
 
     def processKiller(self, name):
         '''
-        Search and kill the process of givin name
+        Search and kill the process of given name
         '''
         flag = False
         for process_name, pid in self.procDict.items():
@@ -42,16 +42,15 @@ class ProcessManager:
                 flag = True
                 p = psutil.Process(pid)
                 p.kill()
-                print("Sucessfull Killing!", pid)
+                print(f'{pid} killed.')
                 break
 
         if not flag:
-            print('Process Not Found:', name)
+            print(f'Process Not Found: {name}')
 
 class GDBManager:
     '''
-    This class is designed to control the GDB, which will be used to insert breaker,
-    remove breaker
+    This class is designed to control GDB, which will be used to insert and/or remove breakpoint,
     '''
     def __init__(self):
         pass
