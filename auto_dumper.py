@@ -2,10 +2,10 @@ from GDBManager import GDBManager
 import sys
 
 def prompt():
-    print("Usage: python auto_dumper.py [breakpoint address in hex]")
+    print("Usage: python auto_dumper.py [breakpoint address in hex] [path to malware executable]")
 
 def main():
-    if(len(sys.argv) != 2):
+    if(len(sys.argv) != 3):
         prompt()
         return
     
@@ -15,10 +15,17 @@ def main():
     except:
         prompt()
         return
+    path = sys.argv[2]
     
     print("Launching gdb subprocess...")
     gdb_manager = GDBManager()
     print("gdb launched successfully.")
+
+    # read symbol tables
+    print("Reading symbols...")
+    output = gdb_manager.exec(f'file {path}')
+    print(f"Response for reading symbols from {addr}:")
+    print(output)
 
     # add breakpoint
     print("Adding break point...")
