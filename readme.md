@@ -23,6 +23,4 @@ This script relies on [procdump](https://docs.microsoft.com/en-us/sysinternals/d
 ### Usage:
 `python auto_dumper.py [breakpoint instruction address] [malware exe name]`
 
-When you see the message: `Waiting for you to take a memory dump...`, you can take a memory dump of the running malware process via various means, e.g. task manager.
-
-After you have taken the memory dump, enter any input, and Auto_Dumper will kill the subordinate malware process, exit gdb, and terminate itself.
+After the script terminates, you should find a `.dmp` file in the root directory of the project. If the script reports `Exited with code: 1`, it's expected behavior and your dump file's integrity is not affected.
