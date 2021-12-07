@@ -23,4 +23,6 @@ This script relies on [procdump](https://docs.microsoft.com/en-us/sysinternals/d
 ### Usage:
 `python auto_dumper.py [breakpoint instruction address] [malware exe name]`
 
+For example: `python auto_dumper.py 0x123456 webc2-greencat-2.exe`
+
 After the script terminates, you should find a `.dmp` file in the root directory of the project. If the script reports `Exited with code: 1`, it's expected behavior and your dump file's integrity is not affected.
