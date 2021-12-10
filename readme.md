@@ -2,6 +2,8 @@
 
 # Documentation for Auto_Dumper
 
+Welcome to the Documentation for Auto_Dumper! This tool was created by students at the Georgia Institute of Technology to work with the Forecast memory foerensics tool developed at the GT CyFI lab: https://github.com/CyFI-Lab-Public/Forecast
+
 ## 1. Sturcture
 
 + class ProcessManager:
@@ -13,12 +15,12 @@
 ## 2. Using Auto_Dumper
 
 ### Dependencies:
-It is confirmed that Auto_Dumper works on Windows with [msys2](https://www.msys2.org/). Of course, You also need to install `gdb` on msys2 by `pacman -S gdb`.
+Auto_Dumper works on Windows with gdb installed. In order to install gdb, users can install msys2 from here: [msys2](https://www.msys2.org/). Users can then install `gdb` on msys2 by running the following command: `pacman -S gdb`.
 
-You also need to install the following python package(s) in your msys2 environment:
+Please also install the following python package(s) in your msys2 environment:
 `pip install pygdbmi`
 
-This script relies on [procdump](https://docs.microsoft.com/en-us/sysinternals/downloads/procdump) to take memory dump of running processes. You can find the executables in the `./procdump` folder. You can also download yourself if you wish. Please make sure the `write_dump()` function is invoking the version of procdump that matches your operating system.
+This script relies on [procdump](https://docs.microsoft.com/en-us/sysinternals/downloads/procdump) to take a memory dump of running processes. You can find the executables in the `./procdump` folder. You can also download yourself if you wish. Please make sure the `write_dump()` function is invoking the version of procdump that matches your operating system.
 
 ### Usage:
 `python auto_dumper.py [breakpoint instruction address] [malware exe name]`
