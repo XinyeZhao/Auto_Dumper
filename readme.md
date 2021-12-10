@@ -2,7 +2,7 @@
 
 # Documentation for Auto_Dumper
 
-Welcome to the Documentation for Auto_Dumper! This tool was created by students at the Georgia Institute of Technology to work with the Forecast memory foerensics tool developed at the GT CyFI lab: https://github.com/CyFI-Lab-Public/Forecast
+Welcome to the Documentation for Auto_Dumper! This tool was created by students at the Georgia Institute of Technology to work with the Forecast memory forensics tool developed at the GT CyFI lab: https://github.com/CyFI-Lab-Public/Forecast
 
 ## 1. Sturcture
 
